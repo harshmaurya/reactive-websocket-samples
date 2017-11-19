@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ReactiveWebsocket.Sample.MainPage">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+        <Frame BackgroundColor="Transparent" OutlineColor="Black">
+            <StackLayout BackgroundColor="CadetBlue">
+                <Label HorizontalOptions="Center" Text="String Demo" FontSize="Large" FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label VerticalOptions="Center" Text="Input Message: "/>
+                    <Entry WidthRequest="100" Text="{Binding StringInput}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Response: "/>
+                    <Label Text="{Binding StringOutput}"/>
+                </StackLayout>
+                <Button Text="Start" Command="{Binding StringCommand}"/>
+            </StackLayout>
+        </Frame>
+
+        <Frame Grid.Row="1" BackgroundColor="Transparent" OutlineColor="Black">
+            <StackLayout BackgroundColor="Coral">
+                <Label HorizontalOptions="Center" Text="Json Demo" FontSize="Large" FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Input Message: "/>
+                    <Entry WidthRequest="100" Text="{Binding JsonInput}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Response: "/>
+                    <Label Text="{Binding JsonOutput}"/>
+                </StackLayout>
+                <Button Text="Start" Command="{Binding JsonCommand}"/>
+            </StackLayout>
+        </Frame>
+
+    </Grid>
+    
+</ContentPage>
